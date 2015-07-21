@@ -1,0 +1,1 @@
+INSERT INTO `platform`.`user` (`age`, `avatar`, `date_created`, `email_address`, `password`, `username`) VALUES (26, 'default_avartar.png', '2015-07-20 15:29:36', 'zrb0307@163.com', '123456', 'Jason');

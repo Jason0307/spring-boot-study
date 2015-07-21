@@ -1,0 +1,38 @@
+package org.zhubao.boot.model;
+
+import java.io.Serializable;
+import java.util.Date;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Table;
+import javax.persistence.Transient;
+
+import lombok.Data;
+
+@Data
+@Entity
+@Table(name = "User")
+public class User implements Serializable {
+    @Transient
+    private static final long serialVersionUID = 1L;
+    @Id
+    @GeneratedValue
+    private int userId;
+    @Column(length = 32, nullable = false, unique = true)
+    private String username;
+    @Column(length = 32, nullable = false, unique = true)
+    private String emailAddress;
+    @Column(length = 32, nullable = false)
+    private String password;
+    @Column(length = 128, nullable = false)
+    private String avatar;
+    @Column(nullable = false)
+    private int age;
+    @Column(nullable = false)
+    private Date dateCreated;
+    private Date dateUpdated;
+    private Date dateLastLogin;
+}
