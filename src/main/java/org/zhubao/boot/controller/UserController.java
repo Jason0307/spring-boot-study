@@ -19,11 +19,18 @@ public class UserController {
     public Iterable<User> getUsers() {
         return userService.findAll();
     }
-  
+
     @RequestMapping("/user/{id}")
     public String getUser(@PathVariable("id") int id, Model model) {
         User user = userService.findById(id);
         model.addAttribute("user", user);
         return "user";
+    }
+
+    @RequestMapping("/user/get/{username}")
+    @ResponseBody
+    public User getUser(@PathVariable("username") String username) {
+        User user = userService.findByUsername(username);
+        return user;
     }
 }

@@ -1,3 +1,22 @@
 spring:
   profiles:
     active: production
+    
+  mail:
+    host: smtp.163.com
+    port: 25
+    username: 18621926390@163.com
+    password: 15155416202
+    default-encoding: UTF-8
+    
+  redis:
+    database: 0
+    host: 192.168.206.40
+    password: #
+    port: 6379
+    pool:
+      max-idle: 8
+      min-idle: 0
+      max-active: 8
+      max-wait: -1
+    
