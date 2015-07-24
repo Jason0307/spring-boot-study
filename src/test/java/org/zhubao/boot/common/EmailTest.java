@@ -23,7 +23,7 @@ public class EmailTest {
     public void testSendEmail() throws Exception {
         MimeMessage mimeMessage = mailSender.createMimeMessage();
         MimeMessageHelper mimeMessageHelper = new MimeMessageHelper(mimeMessage, true, "UTF-8");
-        mimeMessageHelper.setFrom(new InternetAddress("18621926390@163.com"));
+        mimeMessageHelper.setFrom(new InternetAddress("zrb0307@163.com"));
         mimeMessageHelper.setTo("baogee@vip.qq.com");
         mimeMessageHelper.setSubject("May Day");
         mimeMessageHelper.setText("You are not real happy.");

@@ -1,5 +1,7 @@
 package org.zhubao.boot.controller;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -11,12 +13,14 @@ import org.zhubao.boot.service.UserService;
 
 @Controller
 public class UserController {
+    private Logger logger = LoggerFactory.getLogger(UserController.class);
     @Autowired
     private UserService userService;
 
     @RequestMapping("/users")
     @ResponseBody
     public Iterable<User> getUsers() {
+        logger.info("Dispather server here.");
         return userService.findAll();
     }
 

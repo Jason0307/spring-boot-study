@@ -5,7 +5,7 @@ spring:
   mail:
     host: smtp.163.com
     port: 25
-    username: 18621926390@163.com
+    username: zrb0307@163.com
     password: 15155416202
     default-encoding: UTF-8
     
@@ -19,4 +19,11 @@ spring:
       min-idle: 0
       max-active: 8
       max-wait: -1
-    
+      
+server:
+  context-path: /platform 
+  
+security:
+  user:
+    name: admin
+    password: admin
