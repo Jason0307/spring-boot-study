@@ -7,9 +7,12 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.zhubao.boot.model.User;
 import org.zhubao.boot.service.UserService;
+import org.zhubao.boot.vo.ResponseVo;
 
 @Controller
 public class UserController {
@@ -22,6 +25,15 @@ public class UserController {
     public Iterable<User> getUsers() {
         logger.info("Dispather server here.");
         return userService.findAll();
+    }
+
+    @RequestMapping(value = "/login", method = RequestMethod.POST)
+    @ResponseBody
+    public ResponseVo<User> login(@RequestParam(value = "username", required = true) String username,
+            @RequestParam(value = "password", required = true) String password) {
+        logger.info("Dispather server here.");
+        ResponseVo<User> response = userService.login(username, password);
+        return response;
     }
 
     @RequestMapping("/user/{id}")

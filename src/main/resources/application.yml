@@ -1,6 +1,6 @@
 spring:
   profiles:
-    active: production
+    active: development
     
   mail:
     host: smtp.163.com
@@ -11,7 +11,7 @@ spring:
     
   redis:
     database: 0
-    host: 192.168.206.40
+    host: 127.0.0.1
     password: #
     port: 6379
     pool:
@@ -24,6 +24,8 @@ server:
   context-path: /platform 
   
 security:
+  basic:
+    enabled: false
   user:
     name: admin
     password: admin
