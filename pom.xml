@@ -11,7 +11,7 @@
 		<repository>
 			<id>Public</id>
 			<name>Public Repositories</name>
-			<url>http://192.168.206.40:8081/nexus/content/groups/public/</url>
+			<url>http://192.168.2.101:8081/nexus/content/groups/public/</url>
 		</repository>
 	</repositories>
 
@@ -19,7 +19,7 @@
 		<pluginRepository>
 			<id>Public</id>
 			<name>Public Repositories</name>
-			<url>http://192.168.206.40:8081/nexus/content/groups/public/</url>
+			<url>http://192.168.2.101:8081/nexus/content/groups/public/</url>
 		</pluginRepository>
 	</pluginRepositories>
 
