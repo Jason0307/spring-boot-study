@@ -42,6 +42,13 @@ public class UserController {
         model.addAttribute("user", user);
         return "user";
     }
+    
+    @RequestMapping("/main")
+    public String main(Model model) {
+        Iterable<User> users = userService.findAll();
+        model.addAttribute("users", users);
+        return "main";
+    }
 
     @RequestMapping("/user/get/{username}")
     @ResponseBody
