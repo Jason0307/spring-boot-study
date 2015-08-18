@@ -7,7 +7,7 @@ spring:
   jpa:
     database: MYSQL
     show-sql: true
-    enerate-ddl: true
+    generate-ddl: true
     hibernate:
       ddl-auto: update
       naming_strategy: org.hibernate.cfg.ImprovedNamingStrategy

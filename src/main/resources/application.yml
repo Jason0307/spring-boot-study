@@ -19,7 +19,10 @@ spring:
       min-idle: 0
       max-active: 8
       max-wait: -1
-      
+  template:
+    cache: false
+  freemarker:
+    cache: false
 server:
   context-path: /platform 
   
