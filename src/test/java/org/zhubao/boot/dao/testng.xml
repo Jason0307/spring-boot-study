@@ -3,8 +3,8 @@
     <parameter name="userId" value="1" />
     <test name="testNgLearn">
         <classes>
-            <class name="org.zhubao.boot.dao.ArticleNGTest">
-            </class>
+            <class name="org.zhubao.boot.dao.ArticleNGTest" />
+            <class name="org.zhubao.boot.dao.UserRepositoryTest" />
         </classes>
     </test>
 </suite>

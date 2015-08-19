@@ -6,7 +6,7 @@ html {
 body {
   background-color: #ECEFF1;
   color: #37474F;
-  font-family: 'Raleway', sans-serif;
+  font-family: 'FontAwesome';
   font-weight: 300;
   font-size: 16px;
 }
@@ -261,7 +261,7 @@ h1, h2, h3 {
     }
 }
 .material-card.mc-active .mc-description {
-    top: 50px;
+    top: 40px;
     padding-top: 5.6em;
     opacity: 1;
     filter: alpha(opacity=100);

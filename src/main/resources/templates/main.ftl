@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="css/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/font-awesome/css/font-awesome.min.css">
     <link rel="stylesheet" href="css/material-cards.css">
+    <link rel="stylesheet" href="css/main.css">
 </head>
 <body>
     <div class="htmleaf-container">
@@ -22,7 +23,13 @@
                             <span>${user.username}</span>
                             <strong>
                                 <i class="fa fa-fw fa-star"></i>
-                                ${user.address}
+                                ${user.address} / ${user.age} / 
+                                 <#if user.gender == 'MALE'>
+                                     <i class="fa fa-mars"></i>
+                                 <#else>
+                                     <i class="fa fa-venus"></i>
+                                </#if>
+                                
                             </strong>
                         </h2>
                         <div class="mc-content">
@@ -38,16 +45,14 @@
                         </a>
                         <div class="mc-footer">
                             <h4>
-                             <#if user.gender == 'MALE'>
-                             <img class="img-responsive gender-icon" src="images/landeralone.png">
-                              <#else>
-                              <img class="img-responsive gender-icon" src="images/yoana.png">
-                              </#if>
+                            <#list user.tags as tag>
+                                <a class="user-tag">${tag.title}</a>
+                            </#list>
                             </h4>
-                            <a class="fa fa-fw fa-facebook"></a>
-                            <a class="fa fa-fw fa-twitter"></a>
-                            <a class="fa fa-fw fa-linkedin"></a>
-                            <a class="fa fa-fw fa-google-plus"></a>
+                            <a class="fa fa-fw fa-user"></a>
+                            <a class="fa fa-fw fa-qq"></a>
+                            <a class="fa fa-fw fa-comment"></a>
+                            <a class="fa fa-fw fa-weixin"></a>
                         </div>
                     </article>
                 </div>
