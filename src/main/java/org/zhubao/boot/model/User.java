@@ -2,25 +2,36 @@ package org.zhubao.boot.model;
 
 import java.io.Serializable;
 import java.util.Date;
+import java.util.HashSet;
+import java.util.Set;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
+import javax.persistence.NamedAttributeNode;
+import javax.persistence.NamedEntityGraph;
 import javax.persistence.Table;
 import javax.persistence.Transient;
 
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 
 import org.zhubao.boot.model.decorate.BgColor;
 import org.zhubao.boot.model.decorate.Gender;
 import org.zhubao.boot.model.decorate.UserStatus;
 
 @Data
+@EqualsAndHashCode(of = {"userId", "username", "emailAddress"})
 @Entity
-@Table(name = "User")
+@Table(name = "user")
+@NamedEntityGraph(name = "User.tags", attributeNodes = @NamedAttributeNode("tags"))
 public class User implements Serializable {
     @Transient
     private static final long serialVersionUID = 1L;
@@ -54,4 +65,8 @@ public class User implements Serializable {
     private Date dateCreated;
     private Date dateUpdated;
     private Date dateLastLogin;
+    
+    @ManyToMany(fetch = FetchType.EAGER)
+    @JoinTable(name = "user_tag", joinColumns = @JoinColumn(name = "user_id"), inverseJoinColumns = @JoinColumn(name = "tag_id"))
+    private Set<Tag> tags = new HashSet<Tag>();
 }

@@ -19,7 +19,7 @@ import lombok.Data;
 
 @Data
 @Entity
-@Table(name = "Article")
+@Table(name = "article")
 @NamedEntityGraph(name = "Article.user", attributeNodes = @NamedAttributeNode("user"))
 public class Article implements Serializable {
 
