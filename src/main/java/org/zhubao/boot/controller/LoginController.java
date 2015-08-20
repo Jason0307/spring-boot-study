@@ -1,5 +1,7 @@
 package org.zhubao.boot.controller;
 
+import javax.servlet.http.HttpServletRequest;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -25,6 +27,12 @@ public class LoginController {
     public String doLogin(String username, String password, Model model) {
         ResponseVo<User> response = userService.login(username, password);
         model.addAttribute("user", response.getData());
+        return "redirect:/main";
+    }
+    
+    @RequestMapping(value = "/user/logout", method = RequestMethod.GET)
+    public String logout(HttpServletRequest request) {
+        request.getSession().removeAttribute("user");
         return "redirect:/main";
     }
 }

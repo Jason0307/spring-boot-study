@@ -22,11 +22,11 @@
                     <div class="user-info dropdown">
                         <div class="dropdown-toggle">
                             <#if user??>
-                                <img class="user-info-avatar" src="images/end_user.jpg" />
+                                <img class="user-info-avatar" src="${ctx}/images/end_user.jpg" />
                                 <span class="user-info-name">${user.nickname}</span>
                             <#else>
                                 <span class="user-info-name">
-                                    <a href="user/login" class="login" role="button">登录123</a>
+                                    <a href="${ctx}/user/login" class="login" role="button">登录</a>
                                 </span>
                             </#if>
                         </div>
@@ -40,7 +40,7 @@
                                     <a href="/hc/request/listview/">我的活动</a>
                                 </li>
                                 <li>
-                                    <a href="/user/logout/">退出</a>
+                                    <a href="${ctx}/user/logout">退出</a>
                                 </li>
                             </ul>
                         </div>
