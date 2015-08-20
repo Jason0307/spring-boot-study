@@ -84,7 +84,9 @@
 }
 
 .header {
-	background: rgb(228, 118, 115);
+	/* background: rgb(228, 118, 115); */
+	background: url(../images/qing-bg.svg) center bottom no-repeat;
+    background-size: cover;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
     margin: 0 auto 20px;
 }
@@ -152,6 +154,10 @@
     color: #374051;
     position: relative;
     border-bottom: 1px solid #e2eaec;
+}
+
+.user-info .dropdown-panel > ul a:hover, .language-selector .dropdown-panel > ul a:hover {
+    color: #428bca;
 }
 
 .header-inner .language-selector {
