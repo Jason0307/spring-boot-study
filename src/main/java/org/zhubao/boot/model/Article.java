@@ -33,7 +33,7 @@ public class Article implements Serializable {
     @Column(length = 10000, nullable = false)
     private String content;
     @ManyToOne(fetch = FetchType.LAZY, targetEntity = User.class)
-    @JoinColumn(name = "user_id")
+    @JoinColumn(name = "user_id", nullable = false)
     private User user;
     @Column(nullable = false)
     private Date dateCreated;

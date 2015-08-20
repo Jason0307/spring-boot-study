@@ -12,8 +12,46 @@
     <link rel="stylesheet" href="css/main.css">
 </head>
 <body>
+    <header class="header">
+        <div class="wrap header-inner clearfix">
+            <h1 class="logo"><a href="/hc/" title="单身会所"><img class="logo-icon" src="images/single.jpg" alt=""></a></h1>
+            <nav class="header-nav">
+                <div class="user-nav clearfix">
+                    <div class="user-info dropdown">
+                        <div class="dropdown-toggle">
+                            <img class="user-info-avatar" src="images/end_user.jpg" />
+                            <span class="user-info-name">baogee</span>
+                        </div>
+                        <div class="dropdown-panel">
+                            <ul class="user-info-menu">
+                                <li>
+                                    <a href="/hc/message/index/">我的消息</a>
+                                </li>
+                                <li class="my-activities">
+                                    <a href="/hc/request/listview/">我的活动</a>
+                                </li>
+                                <li>
+                                    <a href="/user/logout/">退出</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="language-selector dropdown">
+                        <div class="dropdown-toggle">
+                            <span id="user-name">简体中文</span>
+                        </div>
+                        <div class="dropdown-panel">
+                            <ul id="user-menu" class="language-selector-memu">
+                                <li><a class="language-cn" href="javascript:void(0);" onclick="set_language('zh_cn')">简体中文</a></li>
+                                <li><a class="language-en" href="javascript:void(0);" onclick="set_language('en')">English</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
     <div class="htmleaf-container">
-        <br>
         <section class="container">
             <div class="row active-with-click">
             <#list users as user>
@@ -49,10 +87,14 @@
                                 <a class="user-tag">${tag.title}</a>
                             </#list>
                             </h4>
-                            <a class="fa fa-fw fa-user"></a>
-                            <a class="fa fa-fw fa-qq"></a>
-                            <a class="fa fa-fw fa-comment"></a>
-                            <a class="fa fa-fw fa-weixin"></a>
+                            <a class="fa fa-fw fa-user" title="信息"></a>
+                            <a class="fa fa-fw fa-qq" title="QQ"></a>
+                            <a class="fa fa-fw fa-comment" title="留言"></a>
+                            <a class="fa fa-fw fa-weixin" title="微信"></a>
+                        </div>
+                        <div class="qutton-dialog">
+                            <textarea name="comment" id="comment-input" placeholder="留言..."></textarea>
+                            <div class="submit-comment">发送</div>
                         </div>
                     </article>
                 </div>
@@ -62,11 +104,12 @@
     </div>
     <script src="js/jquery-2.1.1.min.js" type="text/javascript"></script>
     <script src="js/jquery.material-cards.min.js"></script>
+    <script src="js/jquery.tool.js"></script>
     <script>
         $(function () {
             $('.material-card').materialCard({
                 icon_close: 'fa-chevron-left',
-                icon_open: 'fa-thumbs-o-up',
+                icon_open: 'fa-info-circle',
                 icon_spin: 'fa-spin-fast',
                 card_activator: 'click'
             });

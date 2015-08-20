@@ -6,7 +6,6 @@ import java.util.Set;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
@@ -30,6 +29,6 @@ public class Tag implements Serializable{
     private int id;
     @Column(length = 255, nullable = false)
     private String title;
-    @ManyToMany(mappedBy = "tags", fetch = FetchType.EAGER)
+    @ManyToMany(mappedBy = "tags")
     private Set<User> users = new HashSet<User>();
 }
