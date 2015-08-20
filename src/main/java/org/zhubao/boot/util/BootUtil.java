@@ -17,5 +17,4 @@ public class BootUtil {
         boolean result = md5.isPasswordValid(encodePassword, username.trim(), password.trim());
         return result;
     }
-    
 }

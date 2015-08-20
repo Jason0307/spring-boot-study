@@ -1,7 +1,6 @@
 spring:
   profiles:
     active: development
-    
   mail:
     host: smtp.163.com
     port: 25
@@ -19,10 +18,12 @@ spring:
       min-idle: 0
       max-active: 8
       max-wait: -1
-  template:
-    cache: false
   freemarker:
-    cache: false
+    request-context-attribute: request
+logging:
+  level:
+    org.springframework.web: ERROR
+    org.hibernate: ERROR
 server:
   context-path: /platform 
   
