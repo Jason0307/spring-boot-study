@@ -16,7 +16,7 @@
 <body>
     <header class="header">
         <div class="wrap header-inner clearfix">
-            <h1 class="logo"><a href="/hc/" title="单身会所"><img class="logo-icon" src="${ctx}/images/single.jpg" alt=""></a></h1>
+            <h1 class="logo"><a href="/hc/" title="单身会所"><img class="logo-icon" src="${ctx}/images/single_dog.jpg" alt=""></a></h1>
             <nav class="header-nav">
                 <div class="user-nav clearfix">
                     <div class="user-info dropdown">
