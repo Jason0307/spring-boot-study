@@ -20,11 +20,15 @@
             <nav class="header-nav">
                 <div class="user-nav clearfix">
                     <div class="user-info dropdown">
-                        <span class="message-num">1</span>
+                     <#if user??>
+                        <#if user.msgNum gt 0>
+                            <span class="msg-number">${user.msgNum}</span>
+                        </#if>
+                     </#if>
                         <div class="dropdown-toggle">
                             <#if user??>
                                 <img class="user-info-avatar" src="${ctx}/images/end_user.jpg" />
-                                <span class="user-info-name">${user.nickname}</span>
+                                <span class="user-info-name">${user.username}</span>
                             <#else>
                                 <span class="user-info-name">
                                     <a href="${ctx}/user/login" class="login" role="button">登录</a>
@@ -35,8 +39,10 @@
                         <div class="dropdown-panel">
                             <ul class="user-info-menu">
                                 <li>
-                                    <a href="/hc/message/index/">我的消息
-                                         <span class="message-num">1</span> 
+                                    <a href="${ctx}/message/index">我的消息
+                                        <#if user.msgNum gt 0>
+                                            <span class="msg-num">${user.msgNum}</span>
+                                        </#if> 
                                     </a>
                                 </li>
                                 <li class="my-activities">

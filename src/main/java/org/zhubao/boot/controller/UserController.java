@@ -12,7 +12,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.zhubao.boot.model.User;
 import org.zhubao.boot.service.UserService;
-import org.zhubao.boot.vo.ResponseVo;
+import org.zhubao.boot.vo.UserVo;
+import org.zhubao.boot.vo.wapper.ResponseVo;
 
 @Controller
 public class UserController {
@@ -29,10 +30,10 @@ public class UserController {
 
     @RequestMapping(value = "/login", method = RequestMethod.POST)
     @ResponseBody
-    public ResponseVo<User> login(@RequestParam(value = "username", required = true) String username,
+    public ResponseVo<UserVo> login(@RequestParam(value = "username", required = true) String username,
             @RequestParam(value = "password", required = true) String password) {
         logger.info("Dispather server here.");
-        ResponseVo<User> response = userService.login(username, password);
+        ResponseVo<UserVo> response = userService.login(username, password);
         return response;
     }
 

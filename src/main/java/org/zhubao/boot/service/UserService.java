@@ -2,7 +2,8 @@ package org.zhubao.boot.service;
 
 import org.zhubao.boot.model.User;
 import org.zhubao.boot.service.base.BaseService;
-import org.zhubao.boot.vo.ResponseVo;
+import org.zhubao.boot.vo.UserVo;
+import org.zhubao.boot.vo.wapper.ResponseVo;
 
 public interface UserService extends BaseService<User, Integer> {
 
@@ -19,5 +20,5 @@ public interface UserService extends BaseService<User, Integer> {
      * @param password
      * @return
      */
-    public ResponseVo<User> login(String username, String password);
+    public ResponseVo<UserVo> login(String username, String password);
 }

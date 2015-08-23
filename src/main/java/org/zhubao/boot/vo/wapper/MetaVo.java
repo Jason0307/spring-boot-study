@@ -1,4 +1,4 @@
-package org.zhubao.boot.vo;
+package org.zhubao.boot.vo.wapper;
 
 import lombok.Data;
 

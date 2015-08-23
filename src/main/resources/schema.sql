@@ -1,4 +1,5 @@
 DELETE FROM `platform`.`user_tag`;
+DELETE FROM `platform`.`user_message`;
 DELETE FROM `platform`.`tag`;
 DELETE FROM `platform`.`article`;
 DELETE FROM `platform`.`user`;
@@ -23,3 +24,6 @@ INSERT INTO `platform`.`user_tag` (`tag_id`, `user_id`) VALUES (2, 1);
 INSERT INTO `platform`.`user_tag` (`tag_id`, `user_id`) VALUES (4, 2);
 INSERT INTO `platform`.`user_tag` (`tag_id`, `user_id`) VALUES (1, 3);
 INSERT INTO `platform`.`user_tag` (`tag_id`, `user_id`) VALUES (5, 3);
+
+--init user message
+INSERT INTO `user_message` (`id`, `content`, `date_created`, `date_read`, `from_user_id`, `to_user_id`, `status`) VALUES (1, '这是个测试', '2015-08-23 21:02:47', '2015-08-23 21:02:48', 3, 1, 'UNREAD');

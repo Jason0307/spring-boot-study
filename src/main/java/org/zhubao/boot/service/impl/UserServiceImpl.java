@@ -9,13 +9,16 @@ import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
 import org.zhubao.boot.model.User;
+import org.zhubao.boot.model.decorate.MessageStatus;
 import org.zhubao.boot.repository.UserRepository;
+import org.zhubao.boot.service.UserMessageService;
 import org.zhubao.boot.service.UserService;
 import org.zhubao.boot.service.base.BaseServiceImpl;
 import org.zhubao.boot.util.BootUtil;
 import org.zhubao.boot.util.Constants;
-import org.zhubao.boot.vo.MetaVo;
-import org.zhubao.boot.vo.ResponseVo;
+import org.zhubao.boot.vo.UserVo;
+import org.zhubao.boot.vo.wapper.MetaVo;
+import org.zhubao.boot.vo.wapper.ResponseVo;
 
 @Service
 @Transactional
@@ -23,6 +26,8 @@ public class UserServiceImpl extends BaseServiceImpl<User, Integer> implements U
 
     private Logger logger = LoggerFactory.getLogger(UserServiceImpl.class);
     private UserRepository userRepository;
+    @Autowired
+    private UserMessageService userMessageService;
 
     @Autowired
     public void setUserRepository(UserRepository userRepository) {
@@ -38,13 +43,17 @@ public class UserServiceImpl extends BaseServiceImpl<User, Integer> implements U
     }
 
     @Override
-    public ResponseVo<User> login(String username, String password) {
-        ResponseVo<User> response = new ResponseVo<User>();
+    public ResponseVo<UserVo> login(String username, String password) {
+        ResponseVo<UserVo> response = new ResponseVo<UserVo>();
         User user = userRepository.findByUsername(username);
         if (null != user) {
             if (!StringUtils.isEmpty(password)) {
                 if (BootUtil.isPasswordValid(username, password, user.getPassword())) {
-                    response.setData(user);
+                    int msgNum = userMessageService.countUserMessageByFilter(user.getUserId(), MessageStatus.UNREAD);
+                    UserVo userVo = new UserVo();
+                    userVo.setUsername(user.getNickname());
+                    userVo.setMsgNum(msgNum);
+                    response.setData(userVo);
                     return response;
                 }
             }
