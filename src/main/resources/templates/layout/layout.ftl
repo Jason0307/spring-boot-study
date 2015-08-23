@@ -20,6 +20,7 @@
             <nav class="header-nav">
                 <div class="user-nav clearfix">
                     <div class="user-info dropdown">
+                        <span class="message-num">1</span>
                         <div class="dropdown-toggle">
                             <#if user??>
                                 <img class="user-info-avatar" src="${ctx}/images/end_user.jpg" />
@@ -34,7 +35,9 @@
                         <div class="dropdown-panel">
                             <ul class="user-info-menu">
                                 <li>
-                                    <a href="/hc/message/index/">我的消息</a>
+                                    <a href="/hc/message/index/">我的消息
+                                         <span class="message-num">1</span> 
+                                    </a>
                                 </li>
                                 <li class="my-activities">
                                     <a href="/hc/request/listview/">我的活动</a>
