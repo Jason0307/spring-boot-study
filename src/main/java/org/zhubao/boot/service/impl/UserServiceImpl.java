@@ -49,10 +49,11 @@ public class UserServiceImpl extends BaseServiceImpl<User, Integer> implements U
         if (null != user) {
             if (!StringUtils.isEmpty(password)) {
                 if (BootUtil.isPasswordValid(username, password, user.getPassword())) {
-                    int msgNum = userMessageService.countUserMessageByFilter(user.getUserId(), MessageStatus.UNREAD);
+                    int msgNum = userMessageService.countUserMessagesByFilter(user.getUserId(), MessageStatus.UNREAD);
                     UserVo userVo = new UserVo();
                     userVo.setUsername(user.getNickname());
                     userVo.setMsgNum(msgNum);
+                    userVo.setUserId(user.getUserId());
                     response.setData(userVo);
                     return response;
                 }

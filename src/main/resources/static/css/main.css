@@ -351,6 +351,54 @@
 	border-bottom: 1px dotted #e2eaec;
 }
 
+.user-center-msg-list .user {
+    display: inline-block;
+    width: 42px;
+    position: absolute;
+}
+
+.user-center-msg-list .user > img {
+    border-radius: 100%;
+    border: 2px solid #5293C4;
+    max-width: 40px;
+    position: relative;
+}
+
+.user-center-msg-list .body {
+    width: auto;
+    margin-left: 50px;
+    margin-right: 12px;
+    position: relative;
+}
+
+.user-center-msg-list .body > .name {
+    display: block;
+    color: #999;
+}
+
+.user-center-msg-list .body > .time {
+    display: block;
+    font-size: 12px;
+    color: #666;
+    position: absolute;
+    right: 9px;
+    top: 3px;
+}
+
+.user-center-msg-list .body > .text {
+    display: block;
+    position: relative;
+    margin-top: 2px;
+    padding-bottom: 19px;
+    padding-left: 7px;
+    font-size: 13px;
+}
+
+.user-center-msg-list .body > .text > .ace-icon:first-child {
+    color: #DCE3ED;
+    margin-right: 4px;
+}
+
 .user-center-msg-list a {
 	color: #428bca;
 }
