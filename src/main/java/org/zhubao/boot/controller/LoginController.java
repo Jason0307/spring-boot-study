@@ -7,13 +7,11 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.SessionAttributes;
 import org.zhubao.boot.service.UserService;
 import org.zhubao.boot.vo.UserVo;
 import org.zhubao.boot.vo.wapper.ResponseVo;
 
 @Controller
-@SessionAttributes("user")
 public class LoginController {
     @Autowired
     private UserService userService;
