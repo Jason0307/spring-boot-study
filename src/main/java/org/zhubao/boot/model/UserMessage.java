@@ -1,5 +1,7 @@
 package org.zhubao.boot.model;
 
+import groovy.transform.EqualsAndHashCode;
+
 import java.io.Serializable;
 import java.util.Date;
 
@@ -15,23 +17,21 @@ import javax.persistence.Table;
 import javax.persistence.Transient;
 
 import lombok.Data;
-import lombok.EqualsAndHashCode;
 import lombok.ToString;
 
 import org.zhubao.boot.model.decorate.MessageStatus;
-
 @Data
-@EqualsAndHashCode(exclude = {"toUser", "fromUser"})
+@EqualsAndHashCode(excludes = {"toUser", "fromUser"})
 @ToString(exclude = {"toUser", "fromUser"})
 @Entity
 @Table(name = "user_message")
 public class UserMessage implements Serializable{
+
     @Transient
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue
     private int id;
-    @Column(length = 255, nullable = false)
     private String content;
     @ManyToOne(targetEntity = User.class)
     @JoinColumn(name = "to_user_id", nullable = false)
@@ -40,8 +40,9 @@ public class UserMessage implements Serializable{
     @JoinColumn(name = "from_user_id", nullable = false)
     private User fromUser;
     @Enumerated(EnumType.STRING)
+    @Column(nullable = false)
     private MessageStatus status;
-    @Column( nullable = false)
+    @Column(nullable = false)
     private Date dateCreated;
     private Date dateRead;
 

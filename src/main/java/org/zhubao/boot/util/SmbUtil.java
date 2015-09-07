@@ -67,8 +67,8 @@ public class SmbUtil {
     }
 
     public static void main(String[] args) {
-        //smbPut("smb://jason:zhubao0307@192.168.206.40/share", "E:/jason.txt");
-        smbGet("smb://jason:zhubao0307@192.168.206.40/share/jason.txt", "D:/");
+        //smbPut("smb://jason:zhubao0307@192.168.2.109/share", "D:/jason.txt");
+        smbGet("smb://jason:zhubao0307@192.168.2.109/share/jason.txt", "D:/");
 
     }
 

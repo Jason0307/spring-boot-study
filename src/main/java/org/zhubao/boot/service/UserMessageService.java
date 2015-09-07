@@ -6,7 +6,6 @@ import org.zhubao.boot.model.UserMessage;
 import org.zhubao.boot.model.decorate.MessageStatus;
 import org.zhubao.boot.service.base.BaseService;
 import org.zhubao.boot.vo.UserMessageVo;
-
 public interface UserMessageService extends BaseService<UserMessage, Integer> {
 
     /**
@@ -24,4 +23,5 @@ public interface UserMessageService extends BaseService<UserMessage, Integer> {
      * @return
      */
     public int countUserMessagesByFilter(int userId, MessageStatus status);
+
 }

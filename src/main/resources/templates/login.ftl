@@ -2,11 +2,11 @@
 <@layout.main>
 <div class="wrapper">
     <div class="login-container">
-        <h1>Welcome</h1>
+        <h1>欢迎来到单身狗协会</h1>
         <form class="form" action="${request.getContextPath()}/user/login" method="POST">
-        <input type="text" name="username" placeholder="Username">
-        <input type="password" name="password" placeholder="Password">
-        <button type="submit" id="login-button">Login</button>
+        <input type="text" name="username" placeholder="名前">
+        <input type="password" name="password" placeholder="密文">
+        <button type="submit" id="login-button">登录</button>
         </form>
     </div>
     <ul class="bg-bubbles">

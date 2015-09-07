@@ -1,4 +1,5 @@
 <#import "../layout/layout.ftl" as layout> 
+<#assign ctx=request.getContextPath()>
 <@layout.main>
 <main>
     <section class="content">
